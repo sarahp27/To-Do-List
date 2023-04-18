@@ -17,8 +17,9 @@ const CreateTask = ({modal, toggle, save}) => {
         }
     }
 
-    const handleSave = () => {
-        let taskObj ={}
+    const handleSave = (e) => {
+        e.preventDefault()
+        let taskObj = {}
         taskObj["Name"] = taskName;
         taskObj["Description"] = taskDesc;
         taskObj["DueDate"] = dueDate;
@@ -27,7 +28,7 @@ const CreateTask = ({modal, toggle, save}) => {
 
   return (
     <Modal isOpen={modal} modalTransition={{ timeout: 700 }} backdropTransition={{ timeout: 1300 }} toggle={toggle}>
-      <ModalHeader toggle={toggle}>Add a new Task</ModalHeader>
+      <ModalHeader toggle={toggle}>Edit Task</ModalHeader>
       <ModalBody>
         <form>
             <div className="form-group">
@@ -46,7 +47,7 @@ const CreateTask = ({modal, toggle, save}) => {
       </ModalBody>
       <ModalFooter>
         <Button color="primary" onClick={handleSave}>
-          Update
+          Add Task
         </Button>{" "}
         <Button color="secondary" onClick={toggle}>
           Cancel
