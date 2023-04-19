@@ -2,7 +2,6 @@ import React from 'react';
 import { useState } from 'react';
 import CreateTask from '../Modals/CreateTask';
 import Card from './Card';
-// import Card from './Card';
 
 const ToDoList = () => {
     const toggle = () => setModal(!modal)
