@@ -16,10 +16,9 @@ const Card = ({taskObj,index,deleteTask}) => {
         <div className='cardWrapper mr-5'>
             <div className='cardTop' style={{"backgroundColor":"green"}}></div>
                 <div className='taskHolder'>
-                <p className='cardHeader' style={{backgroundColor:"black",color:"white", marginTop:"5px",fontSize:"17px",borderRadius:"10px"}}>              
-                <p>{taskObj.taskName}</p>
-                <p className='cardDescription'>{taskObj.taskDesc}</p>
-                <p className='cardDescription'>{takObj.dueDate}</p>
+                <p className='cardHeader' style={{color:"black", marginTop:"5px",fontSize:"17px",borderRadius:"10px"}}> {taskObj.Name}    </p>         
+                <p className='cardDescription' style={{color:"black"}}>{taskObj.Description}</p>
+                <p className='cardDescription'style={{color:"black"}}>{taskObj.DueDate}</p>
                
                 <div style={{"position": "absolute", "right":"20px","bottom":"20px"}}>
                      <button onClick={()=> setModal(true)} style={{"backgroundColor":"orange", "margin":"4px","fontSize":"20px","border":"0"}}>Edit</button>
@@ -28,9 +27,7 @@ const Card = ({taskObj,index,deleteTask}) => {
             </div>
             <EditTask  toggle={toggle} modal={modal} edit= {EditTask}/>
             </div>
-    );
-
-
-};
+    )};
+            
 
 export default Card;

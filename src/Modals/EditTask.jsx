@@ -57,4 +57,4 @@ const EditTask = ({modal, toggle, save}) => {
   );
 };
 
-export default CreateTask;
+export default EditTask;
