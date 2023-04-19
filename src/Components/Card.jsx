@@ -14,15 +14,16 @@ const Card = ({taskObj,index,deleteTask}) => {
 
     return (
         <div className='cardWrapper mr-5'>
-            <div className='cardTop' style={{"backgroundColor":"chartreuse"}}></div>
+            <div className='cardTop' style={{"backgroundColor":"green"}}></div>
                 <div className='taskHolder'>
-                <span className='cardHeader' style={{"backgroundColor": "F2FAF1", "borderRadius":"10px"}}>{taskObj.Name}</span>
-                <p>{taskObj.Description}</p>
-                <p>{taskObj.DueDate}</p>
-
+                <p className='cardHeader' style={{backgroundColor:"black",color:"white", marginTop:"5px",fontSize:"17px",borderRadius:"10px"}}>              
+                <p>{taskObj.taskName}</p>
+                <p className='cardDescription'>{taskObj.taskDesc}</p>
+                <p className='cardDescription'>{takObj.dueDate}</p>
+               
                 <div style={{"position": "absolute", "right":"20px","bottom":"20px"}}>
-                    <i className='far fa-edit mr-3'  style={{"color":"#5DC250" }} onClick={()=> setModal(true)} ></i>
-                    <i className='fas fa-trash alt' style={{"color":"#5DC250"}} onClick={handleDelete}></i>
+                     <button onClick={()=> setModal(true)} style={{"backgroundColor":"orange", "margin":"4px","fontSize":"20px","border":"0"}}>Edit</button>
+                    <button onClick={handleDelete} style={{"backgroundColor":"orange","fontSize":"20px","border":"0"}}>Delete</button>
                 </div>
             </div>
             <EditTask  toggle={toggle} modal={modal} edit= {EditTask}/>
