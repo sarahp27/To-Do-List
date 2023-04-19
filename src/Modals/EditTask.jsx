@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
-const CreateTask = ({modal, toggle, save}) => {
+const EditTask = ({modal, toggle, save}) => {
     const [taskName, setTaskName] = useState('');
     const [taskDesc, setTaskDesc] = useState('');
     const [dueDate, setDueDate] = useState('');
@@ -27,7 +27,7 @@ const CreateTask = ({modal, toggle, save}) => {
     }
 
   return (
-    <Modal isOpen={modal} modalTransition={{ timeout: 700 }} backdropTransition={{ timeout: 1300 }} toggle={toggle}>
+    <Modal isOpen={modal} toggle={toggle}>
       <ModalHeader toggle={toggle}>Edit Task</ModalHeader>
       <ModalBody>
         <form>
@@ -47,7 +47,7 @@ const CreateTask = ({modal, toggle, save}) => {
       </ModalBody>
       <ModalFooter>
         <Button color="primary" onClick={handleSave}>
-          Add Task
+          Update Task
         </Button>{" "}
         <Button color="secondary" onClick={toggle}>
           Cancel
