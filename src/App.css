@@ -36,3 +36,7 @@
   padding: 1px 1px !important;
   text-align: center;
 }
+
+.cardDescription{
+  fontSize: 20px;
+}
