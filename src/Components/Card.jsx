@@ -15,17 +15,22 @@ const Card = ({taskObj,index,deleteTask, editTasks}) => {
         editTasks(obj, index)
      }
 
+    const currDate = new Date();
+    const dueDateObj = new Date(taskObj.DueDate)
+    const isDueDatePass = dueDateObj < currDate
+    let redColor = { color: "red" };
+    const greenColor = { color: "green"};
+
     return (
         <div className='cardWrapper mr-5'>
             <div className='cardTop' style={{"backgroundColor":"green"}}></div>
                 <div className='taskHolder'>
-                <p className='cardHeader' style={{color:"black", marginTop:"5px",fontSize:"17px",borderRadius:"10px"}}> {taskObj.Name}    </p>         
+                <p className='cardHeader' style={{backgroundColor:"black",color:"white", marginTop:"5px",fontSize:"17px",borderRadius:"10px"}}> {taskObj.Name}    </p>         
                 <p className='cardDescription' style={{color:"black"}}>{taskObj.Description}</p>
-                <p className='cardDescription'style={{color:"black"}}>{taskObj.DueDate}</p>
-               
+                <p style={isDueDatePass ? redColor : greenColor} className='cardDescription'>{taskObj.DueDate}</p>               
                 <div style={{"position": "absolute", "right":"20px","bottom":"20px"}}>
-                     <button onClick={()=> setModal(true)} style={{"backgroundColor":"orange", "margin":"4px","fontSize":"20px","border":"0"}}>Edit</button>
-                    <button onClick={handleDelete} style={{"backgroundColor":"orange","fontSize":"20px","border":"0"}}>Delete</button>
+                     <button onClick={()=> setModal(true)} style={{backgroundColor:"orange", margin:"4px",fontSize:"20px",border:"0"}}>Edit</button>
+                    <button onClick={handleDelete} style={{backgroundColor:"orange",fontSize:"20px",border:"0"}}>Delete</button>
                 </div>
             </div>
             <EditTask modal={modal} toggle={toggle} editTask = {editTask} taskObj = {taskObj}/>
