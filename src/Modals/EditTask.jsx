@@ -30,6 +30,7 @@ const EditTask = ({modal, toggle, editTask, taskObj}) => {
         taskObj["Description"] = taskDesc;
         taskObj["DueDate"] = dueDate;
         editTask(tmpObj)
+        toggle() 
     }
 
   return (
@@ -52,8 +53,6 @@ const EditTask = ({modal, toggle, editTask, taskObj}) => {
         </form>
       </ModalBody>
       <ModalFooter>
-        {/* Its also updating the fields work in the card but for some reason the button is not working if 
-        you'll click apart from modal anywhere the data would be updated */}
         <Button className="btn btn-warning" onClick={handleEdit}>
           Update Task</Button>
         <Button className="btn btn-warning" onClick={toggle}>
