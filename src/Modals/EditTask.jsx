@@ -52,10 +52,10 @@ const EditTask = ({modal, toggle, editTask, taskObj}) => {
         </form>
       </ModalBody>
       <ModalFooter>
-        <Button color="primary" onClick={handleEdit}>
+        <Button className="btn btn-warning" onClick={handleEdit}>
           Update Task
         </Button>{' '}
-        <Button color="secondary" onClick={toggle}>
+        <Button className="btn btn-secondary" onClick={toggle}>
           Cancel
         </Button>
       </ModalFooter>

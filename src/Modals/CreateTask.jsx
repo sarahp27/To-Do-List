@@ -23,6 +23,9 @@ const CreateTask = ({modal, toggle, save}) => {
         taskObj["Description"] = taskDesc;
         taskObj["DueDate"] = dueDate;
         save(taskObj)
+        setTaskName('');
+        setTaskDesc('');
+        setDueDate('');
     }
 
   return (
@@ -45,10 +48,10 @@ const CreateTask = ({modal, toggle, save}) => {
         </form>
       </ModalBody>
       <ModalFooter>
-        <Button color="primary" onClick={handleSave}>
+        <Button className="btn btn-warning" onClick={handleSave}>
           Add
         </Button>{" "}
-        <Button color="secondary" onClick={toggle}>
+        <Button className="btn btn-secondary" onClick={toggle}>
           Cancel
         </Button>
       </ModalFooter>

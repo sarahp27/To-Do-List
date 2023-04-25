@@ -28,9 +28,9 @@ const Card = ({taskObj,index,deleteTask, editTasks}) => {
                 <p className='cardHeader' style={{backgroundColor:"black",color:"white", marginTop:"5px",fontSize:"17px",borderRadius:"10px"}}> {taskObj.Name}    </p>         
                 <p className='cardDescription' style={{color:"black"}}>{taskObj.Description}</p>
                 <p style={isDueDatePass ? redColor : greenColor} className='cardDescription'>{taskObj.DueDate}</p>               
-                <div style={{"position": "absolute", "right":"20px","bottom":"20px"}}>
+                <div style={{position: "absolute", right:"20px",bottom:"20px"}}>
                      <button onClick={()=> setModal(true)} style={{backgroundColor:"orange", margin:"4px",fontSize:"20px",border:"0"}}>Edit</button>
-                    <button onClick={handleDelete} style={{backgroundColor:"orange",fontSize:"20px",border:"0"}}>Delete</button>
+                    <button onClick={handleDelete} style={{backgroundColor:"red",fontSize:"20px",border:"0",color:"white"}}>Delete</button>
                 </div>
             </div>
             <EditTask modal={modal} toggle={toggle} editTask = {editTask} taskObj = {taskObj}/>
