@@ -25,7 +25,7 @@ const Card = ({taskObj,index,deleteTask, editTasks}) => {
         <div className='cardWrapper mr-5'>
             <div className='cardTop' style={{"backgroundColor":"blue"}}></div>
                 <div className='taskHolder'>
-                <p className='cardHeader' style={{backgroundColor:"black",color:"white", marginTop:"5px",fontSize:"17px",borderRadius:"10px"}}> {taskObj.Name}    </p>         
+                <p className='cardHeader' style={{backgroundColor:"black",color:"white", marginTop:"6px",fontSize:"17px",borderRadius:"10px"}}> {taskObj.Name}    </p>         
                 <p className='cardDescription' style={{color:"black"}}>{taskObj.Description}</p>
                 <p style={isDueDatePass ? redColor : greenColor} className='cardDescription'>{taskObj.DueDate}</p>               
                 <div style={{position: "absolute", right:"20px",bottom:"20px"}}>
