@@ -22,11 +22,11 @@ const Card = ({taskObj,index,deleteTask, editTasks}) => {
     const greenColor = { color: "green"};
 
     return (
-        <div className='cardWrapper mr-5'>
-            <div className='cardTop' style={{"backgroundColor":"blue"}}></div>
+        <div className='cardWrapper mr-5' style={{marginLeft:"40px"}}>
+            <div className='cardTop'></div>
                 <div className='taskHolder'>
-                <p className='cardHeader' style={{backgroundColor:"black",color:"white", marginTop:"6px",fontSize:"17px",borderRadius:"10px"}}> {taskObj.Name}    </p>         
-                <p className='cardDescription' style={{color:"black"}}>{taskObj.Description}</p>
+                <p  style={{backgroundColor:"black",color:"white", marginTop:"6px",fontSize:"17px",borderRadius:"10px",width:"250px",height:"30px"}}> {taskObj.Name}    </p>         
+                <p className='cardDescription'>{taskObj.Description}</p>
                 <p style={isDueDatePass ? redColor : greenColor} className='cardDescription'>{taskObj.DueDate}</p>               
                 <div style={{position: "absolute", right:"20px",bottom:"20px"}}>
                      <button onClick={()=> setModal(true)} style={{backgroundColor:"orange", margin:"4px",fontSize:"20px",border:"0"}}>Edit</button>

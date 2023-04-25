@@ -38,7 +38,7 @@ const toggle = () => {
         <>
         <div className='header text-center'>
             <h1> ToDo List</h1>
-            <button className='btn btn-warning mt-3' onClick = {() => setModal(true)}>Add task</button>
+            <button className='btn btn-warning mt-3' style={{fontSize:"20px"}} onClick = {() => setModal(true)}>Add task</button>
         </div>
         <div className = "task-container">
             {

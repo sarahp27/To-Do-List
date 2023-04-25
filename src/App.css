@@ -8,14 +8,15 @@
 .cardWrapper{
   width: 270px; 
   height: 200px; 
-  box-shadow: 0px 3px 50px #A5A5A5;
   display: flex;
   flex-direction: column;
+  background-color: rgb(250, 173, 100);
 }
 
 .cardTop{
   width: 100%;
-  height: 2%;
+  height: 4%;
+  background-color: rgb(51, 143, 123);
 }
 
 .taskHolder{
@@ -39,5 +40,5 @@
 
 .cardDescription{
   font-size: 20px;
-  color:white;
+  color:black;
 }

@@ -29,7 +29,7 @@ const CreateTask = ({modal, toggle, save}) => {
     }
 
   return (
-    <Modal isOpen={modal} modalTransition={{ timeout: 700 }} backdropTransition={{ timeout: 1300 }} toggle={toggle}>
+    <Modal isOpen={modal} toggle={toggle}>
       <ModalHeader toggle={toggle}>Add a new Task</ModalHeader>
       <ModalBody>
         <form>
