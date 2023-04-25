@@ -4,20 +4,28 @@ import CreateTask from '../Modals/CreateTask';
 import Card from './Card';
 
 const ToDoList = () => {
-    const toggle = () => setModal(!modal)
     const [modal, setModal] = useState(false);
-    const [taskList, setTaskList] = useState([
-         
+    const [taskList, setTaskList] = useState([   
 ]);
 
-const deleteTask = (index) => {
+
+const editTasks = (obj, index) => {
     let tempList = taskList;
-    tempList.splice(index,1);
-    localStorage.setItem("taskList",JSON.stringify(tempList))
-    setTaskList(tempList)
-    window.location.reload();
+    tempList[index] = obj;
+    localStorage.setItem("taskList", JSON.stringify(tempList));
+    setTaskList(tempList);
 }
 
+const deleteTask = (index) => {
+    let tempList = [...taskList];
+    tempList.splice(index, 1);
+    localStorage.setItem("taskList", JSON.stringify(tempList));
+    setTaskList(tempList); 
+}
+
+const toggle = () => {
+    setModal(!modal);
+}
 
     const saveTask = (taskObj) =>{
         console.log(taskObj)
@@ -37,7 +45,7 @@ const deleteTask = (index) => {
                 taskList && taskList.map((obj, index) => {
                     return(
                         <>
-                            <Card taskObj = {obj} index={index} deleteTask = {deleteTask}/>
+                            <Card taskObj = {obj} index={index} deleteTask = {deleteTask} editTasks = {editTasks}/>
                         </>
                     )
                 })

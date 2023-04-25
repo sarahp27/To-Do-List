@@ -46,7 +46,7 @@ const CreateTask = ({modal, toggle, save}) => {
       </ModalBody>
       <ModalFooter>
         <Button color="primary" onClick={handleSave}>
-          Update
+          Add
         </Button>{" "}
         <Button color="secondary" onClick={toggle}>
           Cancel

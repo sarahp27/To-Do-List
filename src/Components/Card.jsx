@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
-import EditTask from '../Modals/EditTask'
+import EditTask from '../Modals/EditTask';
 
-import { FontawesomeObject } from '@fortawesome/fontawesome-svg-core';
-
-
-const Card = ({taskObj,index,deleteTask}) => {
+const Card = ({taskObj,index,deleteTask, editTasks}) => {
     const [modal, setModal] = useState(false);
+
     const toggle = () => setModal(!modal)
 
     const handleDelete = () => {
         deleteTask(index);
     }
+
+     const editTask = (obj) =>
+     {
+        editTasks(obj, index)
+     }
 
     return (
         <div className='cardWrapper mr-5'>
@@ -25,7 +28,7 @@ const Card = ({taskObj,index,deleteTask}) => {
                     <button onClick={handleDelete} style={{"backgroundColor":"orange","fontSize":"20px","border":"0"}}>Delete</button>
                 </div>
             </div>
-            <EditTask  toggle={toggle} modal={modal} edit= {EditTask}/>
+            <EditTask modal={modal} toggle={toggle} editTask = {editTask} taskObj = {taskObj}/>
             </div>
     )};
             

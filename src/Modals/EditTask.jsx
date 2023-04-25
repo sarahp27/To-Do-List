@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
-const EditTask = ({modal, toggle, save}) => {
+const EditTask = ({modal, toggle, editTask, taskObj}) => {
     const [taskName, setTaskName] = useState('');
     const [taskDesc, setTaskDesc] = useState('');
     const [dueDate, setDueDate] = useState('');
@@ -17,13 +17,19 @@ const EditTask = ({modal, toggle, save}) => {
         }
     }
 
-    const handleSave = (e) => {
+    useEffect(() => {
+      setTaskName(taskObj.Name)
+      setTaskDesc(taskObj.Description)
+      setDueDate(taskObj.DueDate)
+  },[])
+
+    const handleEdit = (e) => {
         e.preventDefault()
-        let taskObj = {}
+        let tmpObj = {}
         taskObj["Name"] = taskName;
         taskObj["Description"] = taskDesc;
         taskObj["DueDate"] = dueDate;
-        save(taskObj)
+        editTask(tmpObj)
     }
 
   return (
@@ -46,9 +52,9 @@ const EditTask = ({modal, toggle, save}) => {
         </form>
       </ModalBody>
       <ModalFooter>
-        <Button color="primary" onClick={handleSave}>
+        <Button color="primary" onClick={handleEdit}>
           Update Task
-        </Button>{" "}
+        </Button>{' '}
         <Button color="secondary" onClick={toggle}>
           Cancel
         </Button>
